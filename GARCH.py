@@ -17,16 +17,17 @@ def GARCH_simulate(N,sigma_i,alpha_r,beta_r,omega_r):
         r.append(sigma[i]*np.random.normal())
         sigma=np.append(sigma,math.sqrt(omega_r+alpha_r*(r[i]**2)+beta_r*sigma[i]**2))
 
-    plt.plot(range(N),r)
-    #plt.show()
-    plt.plot(range(N+1),sigma)
-    plt.legend(['$u$','$\sigma$ estimate'])
-    plt.xlabel('Days')
-    plt.ylabel('Value')
+    #TO PLOT
+    #plt.plot(range(N),r)
+    #plt.plot(range(N+1),sigma)
+    #plt.legend(['$u$','$\sigma$ estimate'])
+    #plt.xlabel('Days')
+    #plt.ylabel('Value')
     
-    plt.grid()
-    plt.show()
+    #plt.grid()
+    #plt.show()
     return r,sigma
+    
 def GARCH_train(r,sigma,alpha1,beta1,omega1):
     opt = tf.keras.optimizers.Adam(learning_rate=0.004)
     N=len(r)
