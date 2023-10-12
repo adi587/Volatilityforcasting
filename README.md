@@ -25,5 +25,5 @@ but my computer took too long to find a predicted value, hence I was limited in 
 
 A possible way the optimising process could be sped up is by first remembering that long running volaility average is $V_L=\frac{\omega}{1-\alpha-\beta}$. We could estimate this by averaging volatility in our given sample space. Then we set $\omega=V_L(1-\alpha-\beta)$. This means we only need to optimise the program for two parameters now ($\alpha$ and $\beta$). This should cut down the program running time by a lot allowing me to sample over much larger day ranges. Note however there runs a risk that the $V_L$ we calculate over this day range is not the 'true' $V_L$ (the selected days may just have really high or low volatility which isnt representive of the actual long term average volatility), but sampled over large amount of days this error should be minimal. I will try incorporate this to the code later on and see if it imporves performance 
 
-
+(Note: in main.py I only included code to run the program. I do not include any of the plotting code as I thought it was unnecessary)
 
