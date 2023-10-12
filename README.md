@@ -8,15 +8,22 @@ To find the optimal parameters we first assume the underlying price distribution
 
 To first test how long it takes the model to converge simulation data was first generated. This is done by predetermining ($\alpha,\beta,\omega$) which were set to $0.2,0.7,0.1$ initially. Then an initial $\sigma_0$ is provided from which the first $u$ movement is sampled using a normal distribution ($u=\sigma N(0,1)$, where $N(0,1)$ is standard normal distribution). The next $\sigma$ is then estimated through the GARCH model to sample the next $u$. This process is repeated giving multiple $u$ which simulate a price movement that follows the GARCH model. The optimizer is then used on this data to find the original parameters. A simulated price movement is shown here:
 
-![image](https://github.com/adi587/Volatilityforcasting/assets/63116085/25548857-40dc-4534-8152-b14fd45b54ad)
+![image](https://github.com/adi587/Volatilityforcasting/assets/63116085/42e07492-6b79-4c63-bf99-10a7e6623c84)
+
 
 The volatility can be seen to be mean reverting. Furthermore, in areas of large price movements, the volatility increases to simulate a high volatility period before reverting back.
 
 # Applying optimizer
 I first simulated data for 500,750,1000 days 5 times each. The initial 'guess' of the parameters were $0.3,0.6,0.05$ for $\alpha,\beta,\omega$ respectively. I set the learning rate of the ADAM optimizer to 0.004 (played around with a few different rates but this seemed to work best, when I do a more formal investigation, I will post the results here). Here are the predicted parameters using the optimizer.
 
-![image](https://github.com/adi587/Volatilityforcasting/assets/63116085/0eda35da-91ae-4a56-9320-cc81d410d24e) ![image](https://github.com/adi587/Volatilityforcasting/assets/63116085/e70dfbc3-17c6-4016-9c6b-21abedfa100a) ![image](https://github.com/adi587/Volatilityforcasting/assets/63116085/693cbedc-f432-4721-a244-fb9c783cbf5f)
-![image](https://github.com/adi587/Volatilityforcasting/assets/63116085/53e624a1-86fa-4b75-a7e6-32650163dffb) ![image](https://github.com/adi587/Volatilityforcasting/assets/63116085/06a68f19-f50b-4265-9b6b-599ea3d5a50d) ![image](https://github.com/adi587/Volatilityforcasting/assets/63116085/0e5addc5-f373-43e1-985a-cf7ec043080d)
+![image](https://github.com/adi587/Volatilityforcasting/assets/63116085/d321a33a-c542-4b89-abc5-2c46dd8e388d) ![image](https://github.com/adi587/Volatilityforcasting/assets/63116085/62e62903-cc6a-42a4-a9f6-69631fd4c32f) ![image](https://github.com/adi587/Volatilityforcasting/assets/63116085/526162a8-b1ae-4dbc-82b2-9a85fd095b79)
+![image](https://github.com/adi587/Volatilityforcasting/assets/63116085/dcfba064-e612-48d2-88c4-0e96a135fe50) ![image](https://github.com/adi587/Volatilityforcasting/assets/63116085/d2b7b024-321d-48cf-a308-1da26d48f750) ![image](https://github.com/adi587/Volatilityforcasting/assets/63116085/5228be83-9596-4e99-8012-f78b24ff98a1)
+
+
+
+
+
+
 
 (Note the $\omega$ range increasing from 500 days to 750 days is confusing. I suppose this is an anomaly since this doesn't follow the trend of the other parameters.)
 
