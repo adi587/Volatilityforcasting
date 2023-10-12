@@ -12,6 +12,9 @@ The volatility can be seen to be mean reverting. Furthermore in areas of large p
 I first simulated data for 500,750,1000 days 5 times each. The initial 'guess' of the parameters were $0.3,0.6,0.05$ for $\alpha,\beta,\omega$ respectively. I set the learning rate of the ADAM optimiser to 0.004 (played around with few different rates but this seemed to work best, when I do a more formal investigation I will post the results here). Here are the predicted parameters using the optimiser.
 
 ![image](https://github.com/adi587/Volatilityforcasting/assets/63116085/0eda35da-91ae-4a56-9320-cc81d410d24e) ![image](https://github.com/adi587/Volatilityforcasting/assets/63116085/e70dfbc3-17c6-4016-9c6b-21abedfa100a) ![image](https://github.com/adi587/Volatilityforcasting/assets/63116085/693cbedc-f432-4721-a244-fb9c783cbf5f)
+![image](https://github.com/adi587/Volatilityforcasting/assets/63116085/53e624a1-86fa-4b75-a7e6-32650163dffb) ![image](https://github.com/adi587/Volatilityforcasting/assets/63116085/06a68f19-f50b-4265-9b6b-599ea3d5a50d) ![image](https://github.com/adi587/Volatilityforcasting/assets/63116085/0e5addc5-f373-43e1-985a-cf7ec043080d)
+
+(Note the $\omega$ range increasing from 500 days to 750 days is confusing. I suppose this is an anomaly since this doesn't follow the trend of the other paramaters.)
 
 
 
