@@ -25,7 +25,7 @@ def GARCH_simulate(N,sigma_i,alpha_r,beta_r,omega_r):
     plt.ylabel('Value')
     
     plt.grid()
-    
+    plt.show()
     return r,sigma
 def GARCH_train(r,sigma,alpha1,beta1,omega1):
     opt = tf.keras.optimizers.Adam(learning_rate=0.004)
